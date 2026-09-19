@@ -3,7 +3,10 @@
 // out of the URL and wires up the "Open in the app" fallback button.
 // Mirrors the regex in src/lib/links.ts (parseJoinCode) — keep in sync.
 (function () {
-  var match = location.pathname.match(/\/join\/([A-Za-z0-9]{6})(?:[/?#].*)?$/i);
+  // Links are /join/?code=CODE (a real 200 on GitHub Pages); the older
+  // /join/CODE form still lands on 404.html and is parsed from the path.
+  var q = location.search.match(/[?&]code=([A-Za-z0-9]{6})/i);
+  var match = q || location.pathname.match(/\/join\/([A-Za-z0-9]{6})(?:[/?#].*)?$/i);
   var code = match ? match[1].toUpperCase() : null;
 
   var codeRow = document.getElementById("code-row");
