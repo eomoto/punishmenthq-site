@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Join a league — Punishment HQ</title>
+<meta property="og:title" content="You're invited to a league on Punishment HQ" />
+<meta property="og:description" content="Tap to join." />
+<meta property="og:image" content="https://fantasyfootballpunishmentapp.com/og.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="/icon.png" />
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<div class="card">
+  <img class="icon" src="/icon.png" alt="Punishment HQ" />
+  <div id="join-view" hidden>
+    <h1>You're invited</h1>
+    <p>You've been invited to a league on Punishment HQ.</p>
+    <div id="code-row">
+      <div class="code" id="code">------</div>
+    </div>
+    <a class="button" id="open-btn" href="punishmenthq://join/">Open in the app</a>
+    <p class="note">Don't have the app? Ask the person who invited you for a TestFlight invite.</p>
+  </div>
+  <div id="not-found-view" hidden>
+    <h1>Not found</h1>
+    <p>That link doesn't go anywhere.</p>
+    <a class="link" href="/">Go to Punishment HQ</a>
+  </div>
+</div>
+<script src="/join.js"></script>
+<script>
+  // GitHub Pages serves this file for any unmatched path — including
+  // /join/CODE (Pages doesn't rewrite to site/join/index.html for
+  // non-directory-matching paths). join.js has already parsed the code
+  // and filled in #code / #open-btn by the time this runs.
+  (function () {
+    var isJoin = /\/join\//i.test(location.pathname);
+    document.getElementById(isJoin ? "join-view" : "not-found-view").hidden = false;
+  })();
+</script>
+</body>
+</html>

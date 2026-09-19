@@ -1,0 +1,102 @@
+/* Shared styles for the Punishment HQ marketing/join pages. Palette and
+   fonts mirror src/theme.ts — keep in sync if that file changes. */
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Barlow:wght@400;600;700&display=swap");
+
+:root {
+  --bg: #0b1020;
+  --surface: #141b2e;
+  --line: #273152;
+  --text: #f2f4fa;
+  --text2: #9aa6c6;
+  --accent: #c6ff3d;
+  --accent-ink: #0b1020;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Barlow", -apple-system, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-family: "Oswald", "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+p {
+  color: var(--text2);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+
+.note {
+  font-size: 14px;
+  margin-top: 24px;
+}
+
+.code {
+  font-family: "Oswald", "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 12px;
+  margin: 20px 0;
+}
+
+.button {
+  display: inline-block;
+  width: 100%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-top: 8px;
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: none;
+}
